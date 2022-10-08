@@ -1,5 +1,5 @@
 import Team from '../team';
-import Zombie from '../Zombie';
+import Zombie from '../zombie';
 import Undead from '../undead';
 
 test('Shoud test class Team - method toArray()', () => {
