@@ -5,7 +5,6 @@ export default class IsStonedCharacter extends Character {
     super(name, type, health, level, attack, defence);
     this.distance = 1;
     this.isStoned = false;
-    this.attack = attack;
   }
 
   get updAttack() {
@@ -18,7 +17,8 @@ export default class IsStonedCharacter extends Character {
   }
 
   set updAttack(value) {
-    this.attack = value;
+    this.attack =
+      value >= 0 && value <= 100 ? (this.attack = value) : (this.attack = 0);
   }
 
   get stoned() {
@@ -26,6 +26,6 @@ export default class IsStonedCharacter extends Character {
   }
 
   set stoned(value) {
-    this.isStoned = value ? value : false;
+    this.isStoned = typeof value === 'boolean' ? value : false;
   }
 }
